@@ -156,7 +156,7 @@ class TextGeneration:
         return self.prepare_frame(recipe, chef_name)
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data()
 def load_text_generator():
     generator = TextGeneration()
     generator.load()
