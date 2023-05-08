@@ -50,13 +50,6 @@ class TextGeneration:
             "scheherazade": "asset/frame/food-image-logo-bg-s.png",
             "giovanni": "asset/frame/food-image-logo-bg-g.png",
         }
-        self.fonts = {
-            "title": ImageFont.truetype("asset/fonts/Poppins-Bold.ttf", 70),
-            "sub_title": ImageFont.truetype("asset/fonts/Poppins-Medium.ttf", 30),
-            "body_bold": ImageFont.truetype("asset/fonts/Montserrat-Bold.ttf", 22),
-            "body": ImageFont.truetype("asset/fonts/Montserrat-Regular.ttf", 18),
-
-        }
         set_seed(42)
 
     def _skip_special_tokens_and_prettify(self, text):
@@ -271,15 +264,6 @@ def main():
                 generated_recipe["by"] = chef
 
                 r1, r2 = st.columns([6, 2])
-
-                with r2:
-                    # st.write(st.session_state.get_random_frame)
-                    # if hasattr(st, "session_state"):
-                    #     recipe_post = generator.generate_frame(generated_recipe, st.session_state.get_random_frame)
-                    # else:
-                    #     recipe_post = generator.generate_frame(generated_recipe, get_random_frame)
-
-                    recipe_post = generator.generate_frame(generated_recipe, chef.split()[-1])
 
                 with r1:
                     st.markdown(
